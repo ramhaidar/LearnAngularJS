@@ -1,4 +1,27 @@
-<div>
-    <h2>Menu Categories</h2>
-    <categories categories="categoriesCtrl.categories"></categories>
+<div class="container-fluid w-100 h-100">
+    <div class="d-flex justify-content-center">
+        <button
+            class="btn btn-outline-primary mb-3 d-flex align-items-center"
+            ng-click="categoriesCtrl.goBack()">
+            <i class="bi bi-arrow-left me-2"></i>
+            Go Back to Home
+        </button>
+    </div>
+    <h2 class="text-center my-4">Menu Categories</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div
+            class="col"
+            ng-repeat="category in categoriesCtrl.categories">
+            <a
+                ui-sref="items({ categoryShortName: category.short_name })"
+                class="text-decoration-none">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.name }}</h5>
+                        <p class="card-text">{{ category.description }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

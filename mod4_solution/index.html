@@ -6,8 +6,20 @@
             name="viewport"
             content="width=device-width, initial-scale=1" />
         <title>Restaurant Menu</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+            rel="stylesheet" />
+
         <!-- AngularJS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
         <!-- UI-Router -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
 
@@ -19,8 +31,13 @@
         <script src="src/items.component.js"></script>
         <script src="src/routes.js"></script>
     </head>
-    <body>
-        <h1>Restaurant Menu</h1>
-        <ui-view></ui-view>
+    <body class="bg-light position-relative">
+        <div class="container text-center mt-5">
+            <h1 class="mb-4">Restaurant Menu</h1>
+            <div ui-view></div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

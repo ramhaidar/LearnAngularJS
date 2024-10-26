@@ -8,14 +8,17 @@
         },
     });
 
-    // Categories Controller
     angular
         .module("MenuApp")
         .controller("CategoriesController", CategoriesController);
 
-    CategoriesController.$inject = ["categories"];
-    function CategoriesController(categories) {
+    CategoriesController.$inject = ["categories", "$window"];
+    function CategoriesController(categories, $window) {
         var ctrl = this;
         ctrl.categories = categories;
+
+        ctrl.goBack = function () {
+            $window.history.back();
+        };
     }
 })();

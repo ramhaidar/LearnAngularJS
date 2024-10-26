@@ -8,12 +8,15 @@
         },
     });
 
-    // Items Controller
     angular.module("MenuApp").controller("ItemsController", ItemsController);
 
-    ItemsController.$inject = ["items"];
-    function ItemsController(items) {
+    ItemsController.$inject = ["items", "$window"];
+    function ItemsController(items, $window) {
         var ctrl = this;
         ctrl.items = items;
+
+        ctrl.goBack = function () {
+            $window.history.back();
+        };
     }
 })();

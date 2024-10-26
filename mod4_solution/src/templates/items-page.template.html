@@ -1,4 +1,28 @@
-<div>
-    <h2>Menu Items</h2>
-    <items items="itemsCtrl.items"></items>
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <button
+            class="btn btn-outline-primary mb-3 d-flex align-items-center"
+            ng-click="itemsCtrl.goBack()">
+            <i class="bi bi-arrow-left me-2"></i>
+            Go Back to Categories
+        </button>
+    </div>
+    <h2 class="text-center my-4">
+        Items in {{ itemsCtrl.items.category.name }}
+    </h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div
+            class="col"
+            ng-repeat="item in itemsCtrl.items.menu_items">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="text-muted">
+                        Price: ${{ item.price_large || item.price_small }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
