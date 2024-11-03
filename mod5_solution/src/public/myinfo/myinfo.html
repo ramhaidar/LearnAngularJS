@@ -1,0 +1,39 @@
+<div
+    class="container"
+    ng-if="myInfoCtrl.isSignedUp()">
+    <h2 class="text-center">My Information</h2>
+    <div class="form-group">
+        <label>First Name:</label>
+        <span>{{ myInfoCtrl.user.firstName }}</span>
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <span>{{ myInfoCtrl.user.lastName }}</span>
+    </div>
+    <div class="form-group">
+        <label>Email Address:</label>
+        <span>{{ myInfoCtrl.user.email }}</span>
+    </div>
+    <div class="form-group">
+        <label>Phone Number:</label>
+        <span>{{ myInfoCtrl.user.phone }}</span>
+    </div>
+    <div class="form-group">
+        <label>Favorite Dish:</label>
+        <div>
+            <img
+                ng-src="images/menu/{{ myInfoCtrl.user.favoriteDish.charAt(0) }}/{{ myInfoCtrl.user.favoriteDish }}.jpg"
+                alt="{{ myInfoCtrl.user.favoriteDish }}" />
+            <h3>{{ myInfoCtrl.user.favoriteDish }}</h3>
+            <p>{{ myInfoCtrl.user.favoriteDishDescription }}</p>
+        </div>
+    </div>
+</div>
+<div
+    class="container"
+    ng-if="!myInfoCtrl.isSignedUp()">
+    <h2 class="text-center">
+        Not Signed Up Yet.
+        <a ui-sref="public.signup">Sign up Now!</a>
+    </h2>
+</div>
